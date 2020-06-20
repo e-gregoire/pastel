@@ -1,0 +1,149 @@
+/* top image */
+
+
+.container {
+
+    position: relative;
+    text-align: center;
+    color: white;
+    border-radius: 30px;
+
+}
+
+
+.top-title {
+
+  position: absolute;
+  top: 55px;
+  left: 50px;
+  color:rgb(230, 0, 0);
+  font-size: 300%;
+  text-shadow: -4px 3px 4px rgba(255, 77, 77, 0.52);
+  font-family: 'Roboto Mono', monospace;
+
+
+
+}
+
+.middle-title {
+
+  position: absolute;
+  top: 110px;
+  left: 100px;
+  color:rgb(230, 0, 0);
+  font-size: 300%;
+  text-shadow: -4px 3px 4px rgba(255, 77, 77, 0.52);
+  font-family: 'Roboto Mono', monospace;
+
+}
+
+.bottom-title {
+
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  font-size: 100%;
+  font-family: 'Roboto Mono', monospace;
+  color:rgb(230, 0, 0);  
+}
+
+   
+/* navigation bar */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 30px;
+  background-color: rgb(244, 60, 90);
+  
+}
+
+li {
+  float: left;
+  font-family: 'Roboto Mono', monospace;
+  
+}
+
+li a {
+  display: block;
+  flex: 0 1 auto; 
+  list-style-type: none;
+  padding: 10px;
+  background-color:rgb(244, 60, 90);
+  border-radius: 30px;
+  text-decoration: none;
+  color: rgb(38, 38, 38);
+}
+
+li a:hover {
+background-color:rgb(244, 144, 138);
+}
+
+/* body */
+
+body {
+
+    background-color:rgb(186, 241, 228);
+    
+} 
+
+
+
+article {
+ 
+    width: 50%;
+    padding: 2rem;
+    margin: 2rem;
+    float: left;
+    border: solid 3px black;
+    border-radius: 30px;
+    background-color:rgb(72, 185, 168);
+
+
+}
+
+header {
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+p {
+
+    font-family: 'Roboto Mono', monospace;
+    text-align: justify;
+    padding: 0.5rem;
+    border: solid 3px black;
+    border-radius: 30px;
+    background-color:rgb(244, 144, 138);
+
+}
+
+aside {
+
+    width: 30%;
+    padding: .5rem;
+    margin: 1rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px #29627e;
+    font-style: italic;
+    color: #29627e;
+    border: solid 3px black;
+    border-radius: 30px;
+    background-color:rgb(72, 185, 168);
+
+}
+
+footer {
+    
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+    
+}
