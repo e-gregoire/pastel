@@ -61,12 +61,13 @@ ul {
   width: 100%;
   border-radius: 30px;
   background-color: rgb(244, 60, 90);
-  
+  color: white;
 }
 
 li {
   float: left;
   font-family: 'Roboto Mono', monospace;
+  color: white;
   
 }
 
@@ -79,28 +80,30 @@ li a {
   border-radius: 30px;
   text-decoration: none;
   color: rgb(38, 38, 38);
+  color: white;
 }
 
 li a:hover {
 background-color:rgb(244, 144, 138);
 }
 
+
 /* body */
 
 body {
 
     background-color:rgb(186, 241, 228);
-} 
-
+    color: white;
+}
 
 
 article {
  
     width: 50%;
-    padding: 2rem;
-    margin: 2rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
     float: left;
-    border: solid 3px black;
+    color: white;
     border-radius: 30px;
     background-color:rgb(72, 185, 168);
 
@@ -110,14 +113,15 @@ article {
 header {
     text-align: center;
     font-family: 'Roboto Mono', monospace;
+    color: white;
 }
 
 p {
 
     font-family: 'Roboto Mono', monospace;
+    color: white;
     text-align: justify;
     padding: 0.5rem;
-    border: solid 3px black;
     border-radius: 30px;
     background-color:rgb(244, 144, 138);
 
@@ -126,13 +130,12 @@ p {
 aside {
 
     width: 30%;
-    padding: .5rem;
-    margin: 1rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
     float: right;
     box-shadow: inset 5px 0 5px -5px #29627e;
     font-style: italic;
     color: #29627e;
-    border: solid 3px black;
     border-radius: 30px;
     background-color:rgb(72, 185, 168);
 
@@ -170,16 +173,18 @@ footer {
 #article-tic{
 
     background-color:rgb(251, 173, 193);
-
+    color: white;
 }
+
+
 .flex-container{
- background-color:rgb(251, 173, 193);
- display: flex;
- margin: 25px;
- padding: 25px;
- border-radius: 30px;
- justify-content:space-evenly;
- align-content:space-around;
+    background-color:rgb(251, 173, 193);
+    display: flex;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 30px;
+    justify-content:space-evenly;
+    align-content:space-around;
 
 }
 
@@ -194,6 +199,9 @@ footer {
 
 
 .square {
+    display:flex;
+    justify-content: center;
+    align-content:center;
     width: 100px;
     height: 100px;
     margin: auto;
@@ -202,6 +210,38 @@ footer {
     
 
 }
+
+.square:hover {
+    display:flex;
+    justify-content: center;
+    align-content:center;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    background-color:rgb(250, 158, 181);
+    cursor: pointer;
+    
+
+}
+
+.x::before {
+    content: 'x';
+    font-size: 400%;
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(249, 89, 101);
+   
+}
+
+.o::before {
+
+    content: 'o';
+    font-size: 400%;
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(251, 161, 100);
+    
+
+}
+
 
 .reset-turn {
 
@@ -218,8 +258,23 @@ footer {
     font-size: 200%;
     border-radius: 30px;
     font-family: 'Roboto Mono', monospace;
-    text-align: justify;
+    text-align: center;
     padding: 0.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+.reset:hover {
+
+    border: solid 1px white;
+    background-color: rgb(249, 89, 101);
+    width: 30%;
+    font-size: 200%;
+    border-radius: 30px;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    padding: 0.5rem;
+    cursor: pointer;
     color: white;
 }
 
@@ -232,8 +287,9 @@ footer {
     font-size: 200%;
     border-radius: 30px;
     font-family: 'Roboto Mono', monospace;
-    text-align: justify;
+    text-align: center;
     padding: 0.5rem;
     color: white;
 
 }
+
