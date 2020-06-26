@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Tetrokitten
 
     const LTetrokitty = [
-    
     [1, width+1, width*2+1, 2],
     [width, width+1, width+2, width*2+2]
     [1, width+1, width*2+1, width*2+2]
@@ -27,23 +26,24 @@ document.addEventListener('DOMContentLoaded', () => {
     [width+1, width+2,width*2,width*2+1],
     [0,width,width+1,width*2+1],
     [width+1, width+2,width*2,width*2+1]
-  ]
+    
+    ]
 
-  const TTetrokitty = [
+    const TTetrokitty = [
     [1,width,width+1,width+2],
     [1,width+1,width+2,width*2+1],
     [width,width+1,width+2,width*2+1],
     [1,width,width+1,width*2+1]
   ]
 
-  const OTetrokitty = [
+    const OTetrokitty = [
     [0,1,width,width+1],
     [0,1,width,width+1],
     [0,1,width,width+1],
     [0,1,width,width+1]
   ]
 
-  const ITetrokitty = [
+    const ITetrokitty = [
     [1,width+1,width*2+1,width*3+1],
     [width,width+1,width+2,width+3],
     [1,width+1,width*2+1,width*3+1],
@@ -54,13 +54,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 let currentPosition = 4
-let current = Tetrokitten[0][0]
+
+let currentRotation = 0
 
 
 //randomly select a kitten and the first rotation
 
 
+  let random = Math.floor(Math.random()*Tetrokitten.length)
 
+
+  let current = Tetrokitten[random][currentRotation]
 
 
 
@@ -68,16 +72,63 @@ let current = Tetrokitten[0][0]
 
 function draw() {
 
-    current.forEach(index => {
-    
-       squares[currentPosition + index].classList.add('Tetrokitten')
+    current.forEach(index => { squares[currentPosition + index].classList.add('Tetrokitten')
     
     })
 
-}
+    }
+
 
 draw()    
     
+
+// undraw the kittens
+
+function undraw() {
+
+    current.forEach(index => { squares[currentPosition + index].classList.remove('Tetrokitten')
+
+})
+
+}
+
+
+// move down the kitten every second
+
+timerId = setInterval(moveDown, 1000)
+
+   
+   
+//move down function
+
+   function moveDown() {
+
+    undraw()
+    currentPosition += width
+    draw()
+    freeze()
+    
+    }
+    
+        
+// freeze function
+
+ function freeze() {
+    
+    if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
+    
+    current.forEach(index => squares[currentPosition + index].classList.add('taken'))
+    
+    // start a new kitten falling
+    random = Math.floor(Math.random()*Tetrokitten.lenght)
+    current = Tetrokitten[random][currentRotation]
+    currentPosition = 4
+    draw()
+    
+    
+    }
+    
+}   
 
 
 
