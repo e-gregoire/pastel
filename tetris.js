@@ -65,6 +65,8 @@ let currentRotation = 0
 
 
   let current = Tetrokitten[random][currentRotation]
+  
+  
 
 
 
@@ -120,7 +122,9 @@ timerId = setInterval(moveDown, 1000)
     current.forEach(index => squares[currentPosition + index].classList.add('taken'))
     
     // start a new kitten falling
-    random = Math.floor(Math.random()*Tetrokitten.lenght)
+    random = 
+    
+    Math.floor(Math.random()*Tetrokitten.length)
     current = Tetrokitten[random][currentRotation]
     currentPosition = 4
     draw()
