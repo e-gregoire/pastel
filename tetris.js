@@ -1,4 +1,7 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
+
 // Code goes here
 
     const grid = document.querySelector('.tetris-grid')
@@ -11,12 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const width = 10
     
+    let nextRandom = 0
+    
     
 // Tetrokitten
 
     const LTetrokitty = [
     [1, width+1, width*2+1, 2],
-    [width, width+1, width+2, width*2+2]
+    [width, width+1, width+2, width*2+2],
     [1, width+1, width*2+1, width*2+2]
     
     ]
@@ -34,28 +39,33 @@ document.addEventListener('DOMContentLoaded', () => {
     [1,width+1,width+2,width*2+1],
     [width,width+1,width+2,width*2+1],
     [1,width,width+1,width*2+1]
-  ]
+ 
+    ]
 
     const OTetrokitty = [
     [0,1,width,width+1],
     [0,1,width,width+1],
     [0,1,width,width+1],
     [0,1,width,width+1]
-  ]
+  
+    ]
 
     const ITetrokitty = [
     [1,width+1,width*2+1,width*3+1],
     [width,width+1,width+2,width+3],
     [1,width+1,width*2+1,width*3+1],
     [width,width+1,width+2,width+3]
-  ]
+  
+    ]
+  
+  
   
   const Tetrokitten = [LTetrokitty, ZTetrokitty, TTetrokitty, OTetrokitty, ITetrokitty]
 
 
-let currentPosition = 4
+    let currentPosition = 4
 
-let currentRotation = 0
+    let currentRotation = 0
 
 
 //randomly select a kitten and the first rotation
@@ -74,7 +84,7 @@ let currentRotation = 0
 
 function draw() {
 
-    current.forEach(index => { squares[currentPosition + index].classList.add('Tetrokitten')
+    current.forEach(index => { squares[currentPosition + index].classList.add('Tetrokitty')
     
     })
 
@@ -88,7 +98,7 @@ draw()
 
 function undraw() {
 
-    current.forEach(index => { squares[currentPosition + index].classList.remove('Tetrokitten')
+    current.forEach(index => { squares[currentPosition + index].classList.remove('Tetrokitty')
 
 })
 
@@ -104,9 +114,9 @@ timerId = setInterval(moveDown, 1000)
 function control(e) {
 
     if(e.keyCode === 37)  {
-        moveLeft() 
+      moveLeft() 
     } else if (e.keyCode === 38){
-    //rotate()
+      rotate()
     
     } else if (e.keyCode === 39){
       moveRight()
@@ -144,12 +154,13 @@ document.addEventListener('keyup', control)
     current.forEach(index => squares[currentPosition + index].classList.add('taken'))
     
     // start a new kitten falling
-    random = 
+    random = nextRandom
     
-    Math.floor(Math.random()*Tetrokitten.length)
+    nextRandom= Math.floor(Math.random()*Tetrokitten.length)
     current = Tetrokitten[random][currentRotation]
     currentPosition = 4    
     draw()
+    displayShape()
         
     }    
 }   
@@ -195,6 +206,58 @@ function moveRight(){
 
 }
 
+//rotate the kittens
 
+
+
+function rotate() {
+
+    undraw()
+    currentRotation ++ 
+    if(currentRotation === current.length) {//if the current rotation gets to 4, make it go back to 0
+        currentRotation = 0
+    
+    }
+    current = Tetrokitten[random][currentRotation]
+    draw()
+}
+
+
+//show up next kitten
+
+const displaySquares = document.querySelectorAll('.mini-grid-tetris div')
+const displayWidth = 4
+let displayIndex = 0
+
+
+// kitten without the rotation
+
+const upNextTetrokitten = [
+[1, displayWidth+1, displayWidth*2+1, 2],//Ltetrokitty
+[0, displayWidth, displayWidth+1, displayWidth*2+1],//ztetrokitty
+[1, displayWidth, displayWidth+1, displayWidth+2]//Ttretrokitty
+[0, 1, displayWidth, displayWidth+1]//Otretrokitty
+[1, displayWidth+1, displayWidth*2+1, displayWidth*3+1] //Itetrokitty
+
+]
+
+
+
+
+
+//display the shape in the mini-grid display
+
+
+ function displayShape() {
+    //remove any trace of kitten form the entire grid
+      displaySquares.forEach(square => {
+      square.classList.remove('Tetrokitty')
+      square.style.backgroundColor = ''
+    })
+    upNextTetrominoes[nextRandom].forEach( index => {
+      displaySquares[displayIndex + index].classList.add('tetromino')
+      displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom]
+    })
+  }
 
 })
