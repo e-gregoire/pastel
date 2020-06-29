@@ -20,9 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Tetrokitten
 
     const LTetrokitty = [
+    
     [1, width+1, width*2+1, 2],
     [width, width+1, width+2, width*2+2],
-    [1, width+1, width*2+1, width*2+2]
+    [1, width+1, width*2+1, width*2],
+    [width, width*2, width*2+1, width*2+2]
     
     ]
     
@@ -86,7 +88,7 @@ function draw() {
 
     current.forEach(index => { squares[currentPosition + index].classList.add('Tetrokitty')
     
-    })
+     })
 
     }
 
@@ -99,10 +101,20 @@ draw()
 function undraw() {
 
     current.forEach(index => { squares[currentPosition + index].classList.remove('Tetrokitty')
+    
+     })
 
-})
+    }
+    
+    console.log('current');
 
-}
+//function undraw() {
+
+    //current.forEach(index => { squares[currentPosition + index].classList.remove('Tetrokitty')
+
+   // })
+
+//}
 
 
 // move down the kitten every second
@@ -232,14 +244,22 @@ let displayIndex = 0
 
 // kitten without the rotation
 
-const upNextTetrokitten = [
-[1, displayWidth+1, displayWidth*2+1, 2],//Ltetrokitty
-[0, displayWidth, displayWidth+1, displayWidth*2+1],//ztetrokitty
-[1, displayWidth, displayWidth+1, displayWidth+2]//Ttretrokitty
-[0, 1, displayWidth, displayWidth+1]//Otretrokitty
-[1, displayWidth+1, displayWidth*2+1, displayWidth*3+1] //Itetrokitty
+//const upNextTetrokitten = [
+//[1, displayWidth+1, displayWidth*2+1, 2],//Ltetrokitty
+//[0, displayWidth, displayWidth+1, displayWidth*2+1],//ztetrokitty
+//[1, displayWidth, displayWidth+1, displayWidth+2]//Ttretrokitty
+//[0, 1, displayWidth, displayWidth+1]//Otretrokitty
+//[1, displayWidth+1, displayWidth*2+1, displayWidth*3+1] //Itetrokitty
 
-]
+//]
+
+const upNextTetrokitten = [
+    [1, displayWidth+1, displayWidth*2+1, 2], //lTetromino
+    [0, displayWidth, displayWidth+1, displayWidth*2+1], //zTetromino
+    [1, displayWidth, displayWidth+1, displayWidth+2], //tTetromino
+    [0, 1, displayWidth, displayWidth+1], //oTetromino
+    [1, displayWidth+1, displayWidth*2+1, displayWidth*3+1] //iTetromino
+  ]
 
 
 
@@ -252,11 +272,9 @@ const upNextTetrokitten = [
     //remove any trace of kitten form the entire grid
       displaySquares.forEach(square => {
       square.classList.remove('Tetrokitty')
-      square.style.backgroundColor = ''
     })
-    upNextTetrominoes[nextRandom].forEach( index => {
-      displaySquares[displayIndex + index].classList.add('tetromino')
-      displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom]
+    upNextTetrokitten[nextRandom].forEach( index => {
+      displaySquares[displayIndex + index].classList.add('Tetrokitty')
     })
   }
 
