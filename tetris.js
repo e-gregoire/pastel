@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerId    
     let score = 0    
     const colors = [
-        'rgb(243, 114, 132)',
-        'rgb(222, 63, 42)',
-        'rgb(153, 153, 255)',
-        'rgb(210, 121, 210)',
+        'rgb(237, 44, 70)',
+        'rgb(230, 115, 0)',
+        'rgb(102, 0, 255)',
+        'rgb(153, 51, 153)',
         'rgb(0, 179, 134)'   
     ]  
     
@@ -100,10 +100,11 @@ function undraw() {
     } else if (e.keyCode === 39) {
       moveRight()
     } else if (e.keyCode === 40) {
-      moveDown()
-    }
+     moveDown()
+     }
   }
-  document.addEventListener('keyup', control)
+  document.addEventListener('keydown', control)
+
    
 //move down function
 function moveDown() {
