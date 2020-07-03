@@ -352,19 +352,21 @@ footer {
 
 .tetris-grid {
 
-    width: 300px;
-    height: 600px;    
+    width: 250px;
+    height: 500px;   
     border: solid 4px white;
-    background-color: #eec0c6;
-    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+    /*background-color: #eec0c6;
+    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);*/
+    background-image: url("cat3.jpg");
     display:flex;
     flex-wrap: wrap;
 }
 
 
 .tetris-grid div {
-    height: 30px;
-    width: 30px; 
+    height: 25px;
+    width: 25px; 
+    
     
 
 
@@ -377,8 +379,9 @@ footer {
      width: 80px;
      display:flex;
      flex-wrap: wrap; 
-     background-color: #eec0c6;
-     background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+     /*background-color: #eec0c6;
+     background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);*/
+     background-image: url("cat5.jpg");
 
 }
 
@@ -390,8 +393,9 @@ footer {
 
 
 .Tetrokitty {
-
-    background-color:rgb(255, 179, 102);
+    
+    
+    opacity: 0.7;
     
 }
 
