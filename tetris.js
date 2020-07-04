@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.tetris-grid')    
     let squares = Array.from(document.querySelectorAll('.tetris-grid div'))    
     const scoreDisplay = document.querySelector('#tetris-score')    
-    const startButton = document.querySelector('#tetris-start')    
+    const startButton = document.querySelector('#tetris-start')  
+    const easyButton= document.querySelector('#tetris-easy') 
+    const mediumButton= document.querySelector('#tetris-medium') 
+    const hardButton= document.querySelector('#tetris-hard')  
     const width = 10    
     let nextRandom = 0    
     let timerId    
@@ -18,53 +21,49 @@ document.addEventListener('DOMContentLoaded', () => {
         'rgb(0, 179, 134)'   
     ]  
     
+    //stop the window from scrolling with the arrows
     window.addEventListener("keydown", function(e) {
     // space and arrow keys
     if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
         e.preventDefault();
     }
 }, false);
+
     
 // Tetrokitten
-    const LTetrokitty = [
-    
+    const LTetrokitty = [    
     [1, width+1, width*2+1, 2],
     [width, width+1, width+2, width*2+2],
     [1, width+1, width*2+1, width*2],
-    [width, width*2, width*2+1, width*2+2]
-    
+    [width, width*2, width*2+1, width*2+2]    
     ]
     
     const ZTetrokitty = [
     [0,width,width+1,width*2+1],
     [width+1, width+2,width*2,width*2+1],
     [0,width,width+1,width*2+1],
-    [width+1, width+2,width*2,width*2+1]
-    
+    [width+1, width+2,width*2,width*2+1]    
     ]
 
     const TTetrokitty = [
     [1,width,width+1,width+2],
     [1,width+1,width+2,width*2+1],
     [width,width+1,width+2,width*2+1],
-    [1,width,width+1,width*2+1]
- 
+    [1,width,width+1,width*2+1] 
     ]
 
     const OTetrokitty = [
     [0,1,width,width+1],
     [0,1,width,width+1],
     [0,1,width,width+1],
-    [0,1,width,width+1]
-  
+    [0,1,width,width+1]  
     ]
 
     const ITetrokitty = [
     [1,width+1,width*2+1,width*3+1],
     [width,width+1,width+2,width+3],
     [1,width+1,width*2+1,width*3+1],
-    [width,width+1,width+2,width+3]
-  
+    [width,width+1,width+2,width+3]  
     ]
     
   const Tetrokitten = [LTetrokitty, ZTetrokitty, TTetrokitty, OTetrokitty, ITetrokitty]
@@ -81,7 +80,7 @@ function draw() {
     squares[currentPosition + index].style.backgroundColor = colors[random]    
      })
     }
-draw()        
+    draw()        
 
 // undraw the kittens
 function undraw() {
@@ -91,7 +90,6 @@ function undraw() {
     }
 
 //assign functions to keyCodes!!!
-
   function control(e) {
     if(e.keyCode === 37) {
       moveLeft()
@@ -103,8 +101,8 @@ function undraw() {
      moveDown()
      }
   }
+  
   document.addEventListener('keydown', control)
-
    
 //move down function
 function moveDown() {
@@ -113,12 +111,12 @@ function moveDown() {
     draw()
     freeze()
   } 
-    
+      
 //freeze function
   function freeze() {
     if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
       current.forEach(index => squares[currentPosition + index].classList.add('taken'))
-      //start a new tetromino falling
+      //start a new kitten falling
       random = nextRandom
       nextRandom = Math.floor(Math.random() * Tetrokitten.length)
       current = Tetrokitten[random][currentRotation]
@@ -151,7 +149,7 @@ function moveRight(){
       }
   draw()
 }
-
+  
 //rotate the kittens
 function rotate() {
     undraw()
@@ -189,16 +187,39 @@ const upNextTetrokitten = [
       displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom]
       
     })
-  } 
+  }   
+    //add functionality to the buttons 
+  easyButton.addEventListener('click', () => {
+    if (timerId) {
+      clearInterval(timerId)
+      timerId = null
+    } else {
+      draw()
+      timerId = setInterval(moveDown, 1000)
+      nextRandom = Math.floor(Math.random()*theTetrominoes.length)
+      displayShape()
+    }
+  })  
   
-//add functionality to the button
-  startButton.addEventListener('click', () => {
+  mediumButton.addEventListener('click', () => {
+    if (timerId) {
+      clearInterval(timerId)
+      timerId = null
+    } else {
+      draw()
+      timerId = setInterval(moveDown, 700)
+      nextRandom = Math.floor(Math.random()*theTetrominoes.length)
+      displayShape()
+    }
+  })
+  
+  hardButton.addEventListener('click', () => {
     if (timerId) {
       clearInterval(timerId)
       timerId = null
       } else {
       draw()
-      timerId = setInterval(moveDown, 1000)
+      timerId = setInterval(moveDown, 300)
       nextRandom = Math.floor(Math.random()*Tetrokitten.length)
       displayShape()
     }
