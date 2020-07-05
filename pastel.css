@@ -394,3 +394,69 @@ audio {
     margin-left: 200px; 
     background-color: rgb(255, 102, 102);
 }
+
+/* Rock Paper Scissors*/
+.article-rock{
+    background-color:rgb(32, 211, 215);
+
+}
+
+.rock-pointage{    
+    background-color:rgb(32, 211, 215);
+    border: solid 2px white;
+
+}
+
+#rock-result{
+    color: white;
+
+}
+
+#rock-score{
+    color: white;
+
+
+}
+
+
+.choice-rock{
+    background-image: url("fist.png");
+    background-size: contain; 
+    width: 100px; 
+    height: 100px;
+    background-repeat: no-repeat;
+    background-color:rgb(32, 211, 215);
+}
+
+.choice-paper{   
+    background-image: url("palm.png") ;
+    background-size: contain; 
+    width: 100px; 
+    height: 100px;    
+    background-repeat: no-repeat;
+    background-color:rgb(32, 211, 215);    
+}
+
+.choice-scissors{
+    background-image: url("hand.png");
+    background-size: contain; 
+    width: 100px; 
+    height: 100px;    
+    background-repeat: no-repeat;
+    background-color:rgb(32, 211, 215);
+}
+
+.reset-turn{
+
+
+}
+
+.rock-reset{
+
+
+}
+
+.rock-turn{
+
+
+}
