@@ -343,6 +343,7 @@ footer {
     }
 
 .tetris-grid {
+    border:none;
     width: 12.5em;
     height: 25em;   
     background-image: url("cat3.jpg");
@@ -356,6 +357,7 @@ footer {
 }
 
 .mini-grid-tetris {
+     border: none;
      margin-left: 6.25em;
      height: 80px;
      width: 80px;
