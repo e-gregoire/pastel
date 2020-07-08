@@ -76,15 +76,16 @@ let current = Tetrokitten[random][currentRotation]
 
 // draw the kittens
 function draw() {
-    current.forEach(index => { squares[currentPosition + index].classList.add('Tetrokitty')
+    current.forEach(index => { 
+    squares[currentPosition + index].classList.add('Tetrokitty')
     squares[currentPosition + index].style.backgroundColor = colors[random]    
      })
-    }
-    draw()        
+    }        
 
 // undraw the kittens
 function undraw() {
-    current.forEach(index => { squares[currentPosition + index].classList.remove('Tetrokitty')    
+    current.forEach(index => { 
+    squares[currentPosition + index].classList.remove('Tetrokitty')   
     squares[currentPosition + index].style.backgroundColor = ''
      })
     }
@@ -102,7 +103,7 @@ function undraw() {
      }
   }
   
-  document.addEventListener('keydown', control)
+  document.addEventListener('keyup', control)
    
 //move down function
 function moveDown() {
@@ -196,7 +197,7 @@ const upNextTetrokitten = [
     } else {
       draw()
       timerId = setInterval(moveDown, 1000)
-      nextRandom = Math.floor(Math.random()*theTetrominoes.length)
+      nextRandom = Math.floor(Math.random()*Tetrokitten.length)
       displayShape()
     }
   })  
@@ -208,7 +209,7 @@ const upNextTetrokitten = [
     } else {
       draw()
       timerId = setInterval(moveDown, 700)
-      nextRandom = Math.floor(Math.random()*theTetrominoes.length)
+      nextRandom = Math.floor(Math.random()*Tetrokitten.length)
       displayShape()
     }
   })

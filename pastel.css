@@ -30,7 +30,7 @@
   position: absolute;
   bottom: 30px;
   left: 50px;
-  font-size: 100%;
+  font-size: 200%;
   font-family: 'Roboto Mono', monospace;
   color:rgb(230, 0, 0);  
 }
@@ -46,7 +46,7 @@ ul {
   justify-content: space-between;
   width: 100%;
   border-radius: 30px;
-  background-color: rgb(244, 60, 90);
+  background-color: rgb(231, 13, 50);
   color: white;
 }
 
@@ -61,7 +61,7 @@ li a {
   flex: 0 1 auto; 
   list-style-type: none;
   padding: 10px;
-  background-color:rgb(244, 60, 90);
+  background-color:rgb(231, 13, 50);
   border-radius: 30px;
   text-decoration: none;
   color: rgb(38, 38, 38);
@@ -132,7 +132,7 @@ footer {
 
 /* tic tac toe */
 #tic-tac-toe{
-    color:rgb(249, 89, 101);
+    color:rgb(160, 3, 3);
     text-shadow: #ffffff 1px 1px 4px;
     font-size: 250%;
 }
@@ -211,7 +211,7 @@ footer {
     text-align: center;
     padding: 0.5rem;
     cursor: pointer;
-    color: white;
+    color: rgb(51, 51, 153);
 }
 
 .reset:hover {
@@ -224,7 +224,7 @@ footer {
     text-align: center;
     padding: 0.5rem;
     cursor: pointer;
-    color: white;
+    color: rgb(51, 51, 153);
 }
 
 .turn {
@@ -236,7 +236,7 @@ footer {
     font-family: 'Roboto Mono', monospace;
     text-align: center;
     padding: 0.5rem;
-    color: white;
+    color: rgb(51, 51, 153);
 
 }
 
@@ -343,22 +343,20 @@ footer {
     }
 
 .tetris-grid {
-    width: 250px;
-    height: 500px;   
-    border: solid 4px white;
+    width: 12.5em;
+    height: 25em;   
     background-image: url("cat3.jpg");
     display:flex;
     flex-wrap: wrap;
 }
 
 .tetris-grid div {
-    height: 25px;
-    width: 25px; 
+    height: 1.25em;
+    width: 1.25em; 
 }
 
 .mini-grid-tetris {
-     margin-left: 100px;
-     border: solid 4px white;
+     margin-left: 6.25em;
      height: 80px;
      width: 80px;
      display:flex;
