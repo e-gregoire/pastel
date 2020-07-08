@@ -35,6 +35,10 @@
   color:rgb(230, 0, 0);  
 }
 
+h1{
+    text-align:center;
+}
+
 /* navigation bar */
 ul {
   list-style-type: none;
