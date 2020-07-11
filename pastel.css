@@ -36,7 +36,7 @@
 }
 
 h1{
-    text-align:center;
+
 }
 
 /* navigation bar */
@@ -70,6 +70,9 @@ li a {
   text-decoration: none;
   color: rgb(38, 38, 38);
   color: white;
+}
+hi {
+    text-align:center;
 }
 
 li a:hover {
@@ -347,7 +350,6 @@ footer {
     }
 
 .tetris-grid {
-    border:none;
     width: 12.5em;
     height: 25em;   
     background-image: url("cat3.jpg");
@@ -361,7 +363,6 @@ footer {
 }
 
 .mini-grid-tetris {
-     border: none;
      margin-left: 6.25em;
      height: 80px;
      width: 80px;
@@ -504,4 +505,25 @@ article{
     
 }
 
-
+/* PONG! */
+ #canvas {
+    display:inline-block;
+    float: left;
+ }
+ 
+ #pong-footer {
+    display: none;
+    position: absolute;
+    left: 5px;
+    width: 20%;   
+ }
+ 
+ #title-pong {
+    display:inline-block;
+    position:absolute;
+    top: 460px;
+    text-align: center;
+    color: 
+rgb(153, 0, 51);
+    font-size: 200%;
+ }

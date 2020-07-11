@@ -3,13 +3,15 @@ var animate = window.requestAnimationFrame ||
     window.mozRequestAnimationFrame ||
     function(callback) {
        window.setTimeout(callback, 1000/60) 
-    };
-var canvas = document.createElement("canvas"); 
+    };  
+var canvas = document.createElement("canvas");
+var main = document.getElementById("main");  
 var width = 400;
 var height = 530;
 canvas.width = width;
 canvas.height = height;
 var context = canvas.getContext('2d');
+
 
 //on load
 window.onload = function() {
