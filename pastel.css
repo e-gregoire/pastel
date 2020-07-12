@@ -506,24 +506,38 @@ article{
 }
 
 /* PONG! */
- #canvas {
+ canvas {
     display:inline-block;
-    float: left;
+    float: right;
+    top:680px;
+    position:absolute;
+    margin-left: 260px;
+    margin-bottom:500px;
  }
  
+ 
  #pong-footer {
-    display: none;
-    position: absolute;
-    left: 5px;
-    width: 20%;   
+    display: hidden;
+    position: relative;
+    width: 30%;   
+    margin-left: 940px;
  }
  
  #title-pong {
     display:inline-block;
     position:absolute;
+    background-color: #5784b4;
+    width: 60%;
+    height: 800px;
     top: 460px;
     text-align: center;
     color: 
 rgb(153, 0, 51);
     font-size: 200%;
+    margin-left: 50px;
+    margin-top:15px;
+    padding-top: 50px;
+    border-radius: 30px;
+    opacity: 0.9;
+    color: #f4cfdf;
  }

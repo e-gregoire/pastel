@@ -29,7 +29,7 @@ var update = function() {
 };
 
 var render = function() {
-    context.fillStyle = "#b3b3ff";
+    context.fillStyle = "#EB96AA";
     context.fillRect(0, 0, width, height);
 };
 
@@ -44,7 +44,7 @@ function Paddle(x, y, width, height) {
 }
 
 Paddle.prototype.render = function() {
-    context.fillStyle = "#b3003b";
+    context.fillStyle = "#EB96AA";
     context.fillRect(this.x, this.y, this.width, this.height);
 };
 
@@ -87,7 +87,7 @@ var computer = new Computer();
 var ball = new Ball(200, 300);
 
 var render = function() {
-    context.fillStyle = "#b3b3ff";
+    context.fillStyle = "#b6d8f2";
     context.fillRect(0, 0, width, height);
     player.render();
     computer.render();
