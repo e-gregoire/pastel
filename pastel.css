@@ -541,3 +541,37 @@ rgb(153, 0, 51);
     opacity: 0.9;
     color: #f4cfdf;
  }
+
+/*Pac-Man*/
+.grid-pac{
+    display: flex;
+    flex-wrap: wrap;
+    width: 560px;
+    height: 560px;
+    border: solid black;
+}
+
+.grid-pac div{
+    width:20px;
+    height:20px;
+}
+
+.pac-dot{
+    background-color: green;
+    border: 5px solid white;
+    box-sizing: border-box;
+}
+
+.wall{
+    background-color: blue;
+}
+
+.power-pellet{
+    background-color: green;
+    border-radius: 10px;
+}
+
+.pac-man{
+    background-color: yellow;
+    border-radius:10px;
+}

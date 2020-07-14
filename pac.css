@@ -119,12 +119,13 @@ footer {
 }
 
 /*pac-man*/
+
 .grid-pac{
     display: flex;
     flex-wrap: wrap;
     width: 560px;
     height: 560px;
-    border: solid white;
+    border: solid 10px white;   
     margin-left: 50px;
     margin-top: 50px;
     background-color:white;
@@ -150,7 +151,44 @@ footer {
     border-radius: 10px;
 }
 
+.blinky {
+    background-color:red;
+    border:0px;
+}
+
+.pinky {
+    background-color:pink;
+    border:0px;
+}
+
+.inky {
+    background-color:cyan;
+    border:0px;
+}
+
+.clyde {
+    background-color:orange;
+    border:0px;
+}
+
+.scared-ghost {
+    background-color:aquamarine;
+    border:0px;
+}
+
 .pac-man{
     background-color: yellow;
     border-radius:10px;
+}
+
+#word-score {
+    color: black;
+    font-size: 150%;
+    margin-left: 50px;
+}
+
+#pac-title {
+    font-size: 200%;
+    margin-left: 255px;
+    color: black;
 }
